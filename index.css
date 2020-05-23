@@ -1,0 +1,62 @@
+.home-main-section {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    /* to fill entire remaning space */
+    flex-grow: 1;
+}
+
+.home-main-section .img-wrapper {
+    flex-grow: 1;
+    /* vertical flex orientation */
+    flex-direction: column;
+    display: flex;
+    align-items: stretch;
+    /* push the image as close to the text as possible */
+    justify-content: flex-end;
+}
+
+.home-main-section .lady-image {
+    background-image: url(images/landing-page-girl.png);
+    /* image will grow to the full height of the section is inside of */
+    flex-grow: 1;
+    max-height: 70vh;
+    min-width: 30vw;
+    /* fit entaire image without croping or scaling */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+}
+
+.home-main-section .call-to-action {
+    /* lines up elements next to each other */
+    display: flex;
+    /* lines up elements top to bottom - one on top of the other */
+    flex-direction: column;
+    /* to not expand to whole width of the column */
+    align-items: flex-start;
+    margin: 1rem;
+    /* align text in the center of the flex container */
+    align-self: center;
+}
+
+/* if screen is 900px or less execute bellow code - the image will be tiny so it will be better to remove it */
+@media (max-width: 900px) {
+    .home-main-section .img-wrapper {
+        /* this will remove the image */
+        display: none;
+    }
+
+    .home-main-section {
+        /* center text */
+        justify-content: center;
+    }
+}
+
+.home-page-circle-1 {
+    position: absolute;
+    width: 25vw;
+    height: 25vw;
+    border-radius: 50%;
+    background-color: red;
+}
