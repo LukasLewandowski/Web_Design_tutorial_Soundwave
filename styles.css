@@ -34,29 +34,49 @@ body {
   margin-left: 1rem;
 }
 
-.main-nav ul {
+.main-nav ul, .footer-nav ul {
   display: flex;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.main-nav a {
+.main-nav a, .footer-nav a {
   color: inherit;
   text-decoration: none;
   padding: 1rem;
 }
 
-.main-nav a:hover {
+.main-nav a:hover, .footer-nav a:hover {
   color: #adadad;
 }
 
-.main-header {
+.main-header, .main-footer{
   display: flex;
   /* gives as much space as it can between elements */
   justify-content: space-between;
   align-items: center;
+}
+
+.main-header {
   height: 140px;
+}
+
+.main-footer {
+  height: 70px;
+  background-color: #202027;
+  font-weight: bold;
+}
+
+.social-link img {
+  /* image will have exact size of the text - this will align icons with text */
+  width: 1em;
+  margin-right: .25rem;
+}
+
+.main-footer .container {
+  display: flex;
+  justify-content: space-between;
 }
 
 .container {
@@ -64,6 +84,8 @@ body {
   /* margin 0 for top and bottom and auto for left and right which will center content if above 1200pz*/
   margin: 0 auto;
   padding: 0 40px;
+  /* container will grow to full height */
+  flex-grow: 1;
 }
 
 .title {

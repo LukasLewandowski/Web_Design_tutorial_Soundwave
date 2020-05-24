@@ -1,0 +1,55 @@
+.discover-main-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* to fill entire remaining space */
+    flex-grow: 1;
+  }
+
+  .discover-main-section .covers-image {
+      width: 30vw;
+      margin-left: 2rem;
+      /* this will make image scaling set to auto which will always make it perfect square */
+      height: auto;
+      max-width: 350px;
+  }
+
+  /* order elements side by side */
+  .icon-section {
+      display: flex;
+  }
+
+  .icon {
+      display: flex;
+        /* order elements above and bellow each other */
+      flex-direction: column;
+      /* spread out elements as far as it can */
+      justify-content: space-between;
+      /* center icons directly over text */
+      align-items: center;
+      /* add space between each item */
+      margin: .5rem;
+      padding: .75rem;
+      width: 100px;
+      height: 100px;
+      background-color: #202027;
+      /* margin from the bottom */
+      margin-bottom: 2rem;
+  }
+
+  .icon img {
+      width: 40px;
+  }
+
+  @media (max-width: 800px) {
+      .discover-main-section {
+          flex-direction: column;
+          justify-content: center;
+      }
+
+      .discover-main-section .covers-image {
+          margin-top: 2rem;
+          height: 30vh;
+          width: auto;
+      }
+  }

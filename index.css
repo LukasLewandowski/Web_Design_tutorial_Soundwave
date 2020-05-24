@@ -1,62 +1,107 @@
 .home-main-section {
-    display: flex;
-    align-items: stretch;
-    justify-content: space-between;
-    /* to fill entire remaning space */
-    flex-grow: 1;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  /* to fill entire remaining space */
+  flex-grow: 1;
 }
 
 .home-main-section .img-wrapper {
-    flex-grow: 1;
-    /* vertical flex orientation */
-    flex-direction: column;
-    display: flex;
-    align-items: stretch;
-    /* push the image as close to the text as possible */
-    justify-content: flex-end;
+  flex-grow: 1;
+  /* vertical flex orientation */
+  flex-direction: column;
+  display: flex;
+  align-items: stretch;
+  /* push the image as close to the text as possible */
+  justify-content: flex-end;
 }
 
 .home-main-section .lady-image {
-    background-image: url(images/landing-page-girl.png);
-    /* image will grow to the full height of the section is inside of */
-    flex-grow: 1;
-    max-height: 70vh;
-    min-width: 30vw;
-    /* fit entaire image without croping or scaling */
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: bottom left;
+  background-image: url(images/landing-page-girl.png);
+  /* image will grow to the full height of the section is inside of */
+  flex-grow: 1;
+  max-height: 70vh;
+  min-width: 30vw;
+  /* fit entire image without cropping or scaling */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom left;
 }
 
 .home-main-section .call-to-action {
-    /* lines up elements next to each other */
-    display: flex;
-    /* lines up elements top to bottom - one on top of the other */
-    flex-direction: column;
-    /* to not expand to whole width of the column */
-    align-items: flex-start;
-    margin: 1rem;
-    /* align text in the center of the flex container */
-    align-self: center;
+  /* lines up elements next to each other */
+  display: flex;
+  /* lines up elements top to bottom - one on top of the other */
+  flex-direction: column;
+  /* to not expand to whole width of the column */
+  align-items: flex-start;
+  margin: 1rem;
+  /* align text in the center of the flex container */
+  align-self: center;
 }
 
 /* if screen is 900px or less execute bellow code - the image will be tiny so it will be better to remove it */
 @media (max-width: 900px) {
-    .home-main-section .img-wrapper {
-        /* this will remove the image */
-        display: none;
-    }
+  .home-main-section .img-wrapper {
+    /* this will remove the image */
+    display: none;
+  }
 
-    .home-main-section {
-        /* center text */
-        justify-content: center;
-    }
+  .home-main-section {
+    /* center text */
+    justify-content: center;
+  }
 }
 
 .home-page-circle-1 {
-    position: absolute;
-    width: 25vw;
-    height: 25vw;
-    border-radius: 50%;
-    background-color: red;
+  position: absolute;
+  width: 25vw;
+  height: 25vw;
+  /* to make a circle */
+  border-radius: 50%;
+  /* rgba to add 0.1 - 10% of visibility */
+  background-color: rgba(187, 58, 127, 0.1);
+  /* place element 5% away from the bottom of the page */
+  bottom: 5vw;
+  left: 5vw;
+  /* place element behind all others */
+  z-index: -1;
+}
+
+.home-page-circle-2 {
+  position: absolute;
+  width: 25vw;
+  height: 25vw;
+  border-radius: 50%;
+  /* rgba to add .1 - 10% of visibility */
+  background-color: rgba(23, 98, 167, 0.1);
+  /* place element 15% away from the top of the page */
+  top: 15vh;
+  left: 30vw;
+  /* place element behind all others */
+  z-index: -1;
+}
+
+.home-page-circle-3 {
+  position: absolute;
+  /* cuts out all the outside content that we don't want */
+  overflow: hidden;
+  width: 45vw;
+  height: 45vw;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+/* to overflow the parent element (.home-page-circle-3) and not cause scroll on the page */
+.home-page-circle-3::before {
+  content: "";
+  /* to add offset - move element partially out of the page - this will also add scroll in the browser */
+  transform: translate(40%, 40%);
+  position: absolute;
+  /* 100% of the parent element */
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: rgba(23, 98, 167, 0.1);
 }
